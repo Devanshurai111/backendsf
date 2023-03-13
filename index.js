@@ -49,6 +49,7 @@ app.get('/', (req, res) => {
   res.send('Hey this is my API running 🥳')
 })
 app.use("/api/posts", postRoute);
+const __dirname = path.resolve();
 app.use( express.static(path.join(__dirname,'./form/build') ) );
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname,'./form/build/index.html'));
