@@ -45,6 +45,9 @@ app.use(morgan("common"));
 // app.use("/api/auth", authRoute);
 // app.use("/api/users", userRoute);
 app.use(cors());
+app.get('/', (req, res) => {
+  res.send('Hey this is my API running 🥳')
+})
 app.use("/api/posts", postRoute);
 app.use( express.static(path.join(__dirname,'./form/build') ) );
 app.get('*', (req, res) => {
